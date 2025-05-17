@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>복습하기</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>❌ 틀린 단어 복습</h1>
+
+        {% if wrong_list %}
+            <ul>
+                {% for item in wrong_list %}
+                    <li>
+                        <strong>{{ item.word }}</strong> - 정답: {{ item.correct }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <br>
+            <a href="/review/quiz">🔁 틀린 단어 퀴즈 풀기</a>
+        {% else %}
+            <p>모든 문제를 맞히셨어요! 🎉</p>
+        {% endif %}
+
+        <br><a href="/">← 메인으로</a>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>객관식 퀴즈</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>🎯 객관식 영어 퀴즈</h1>
+        <p><strong>{{ word }}</strong> 의 뜻은 무엇일까요?</p>
+        <form method="POST" action="{{ url_for('check_mcq') }}">
+            {% for choice in choices %}
+                <input type="radio" name="choice" value="{{ choice }}" required>
+                {{ choice }}<br>
+            {% endfor %}
+            <br>
+            <button type="submit">제출</button>
+        </form>
+        <br>
+        <a href="/">← 메인으로</a>
+    </body>
+</html>

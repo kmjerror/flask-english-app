@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>퀴즈 결과</title>
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1>📝 결과</h1>
+        {% if result %}
+            <p style="color:green;">정답입니다! 🎉</p>
+        {% else %}
+            <p style="color:red">틀렸습니다 😢</p>
+            <p>당신의 답: {{ user }}</p>
+            <p>정답: {{ correct }}</p>
+        {% endif %}
+        <br>
+        <a href="/quiz/mcq">🔁 다시 풀기</a>
+        <a href="/">← 메인으로</a>
+    </body>
+</html>
